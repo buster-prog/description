@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+</head>
+
+<body>
+
+    <div class="social-card">
+
+        <div class="profile-picture">
+            <img src="attachment-56.gif" alt="Profile Picture">
+        </div>
+
+        <div class="socials">
+            <a href="https://discord.com/users/1211619017526214720" target="_blank" title="Discord">
+                <img src="discord.png" alt="Discord">
+            </a>
+
+            <a href="https://github.com/buster-prog" target="_blank" title="GitHub">
+                <img src="github.png" alt="GitHub">
+            </a>
+
+            <a href="https://instagram.com/bustrgg1234" target="_blank" title="Instagram">
+                <img src="instagram.png" alt="Instagram">
+            </a>
+
+            <a href="https://www.roblox.com/users/profile?username=bustergg1234" target="_blank" title="Roblox">
+                <img src="roblox.png" alt="Roblox">
+            </a>
+        </div>
+        <div>
+            <p class="about description">
+                Hello! You may call me buster. I am a 15-year-old high-school student who is passionate about various activites. I especially enjoy partaking in discussions and debates within the SCPF fandom.
+                
+                <br>
+
+                Other than that, I'm also interested in politics and real-world events. I particularly enjoy discussing and debating about the  current affairs, and I am quite passionate about my views upon the world.
+
+                I enjoy a wide variety of music, and also appreciate participating in a variety of video games, notably Military simulations. I am also able to draw a credible amount, though with reference.
+            </p>
+        </div>
+        <div>
+            <br>
+            Feel free to always reach out to me on discord/instagram, I shall always be able glad to respond.
+        
+        </div>
+        <div style="font-size: small;">
+            <p>
+                <br>
+                (If you haven't figured it out, I made this website myself, so its rather wonky)
+            </p>
+        </div>
+
+    </div>
+
+    <div class="music-player">
+
+        <div class="music-info">
+            <p id="song-name">Aurian Dance</p>
+            <small>Now Playing</small>
+        </div>
+        
+        <audio id="audio">
+            <source src="music/ambient1.mp4" type="audio/mpeg">
+        </audio>
+
+        <input type="range" id="progress" value="0" step="1">
+
+        <<div class="controls">
+
+            <button onclick="rewind()">⏮</button>
+
+            <button onclick="playPause()">▶</button>
+
+            <button onclick="skip()">⏭</button>
+
+            <button onclick="mute()">🔇</button>
+
+</div>
+
+    </div>
+
+<script>
+
+const audio = document.getElementById("audio");
+
+
+function playPause(){
+
+    if(audio.paused){
+
+        audio.play();
+
+    } else {
+
+        audio.pause();
+
+    }
+
+}
+
+
+function mute(){
+
+    audio.muted = !audio.muted;
+
+}
+
+function skip(){
+
+    audio.currentTime += 10;
+
+}
+
+
+// ⏮ Rewind
+function rewind(){
+
+    audio.currentTime -= 10;
+
+}
+
+
+audio.addEventListener("timeupdate", () => {
+
+    progress.value = (audio.currentTime / audio.duration) * 100;
+
+});
+
+progress.addEventListener("input", () => {
+
+    audio.currentTime = (progress.value / 100) * audio.duration;
+
+});
+
+
+</script>
+
+</script>
+
+</body>
+
+<style>
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+
+    background-image: url("background.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.social-card {
+    width: 650px;
+    height: 800px;
+
+    background: rgba(28, 34, 46, 0.45);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 22px;
+
+    box-shadow: 0 8px 35px rgba(0,0,0,.35);
+
+    color: white;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 180px;
+    height: 180px;
+
+    margin: 40px auto 25px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid rgba(255,255,255,.15);
+
+    box-shadow: 0 0 20px rgba(255,255,255,.08);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.socials a {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.socials img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+    display: block;
+
+    transition: .2s ease;
+}
+
+.socials img:hover {
+    transform: scale(1.1);
+}
+
+
+.discord-icon {
+    width: 34px;
+    height: 34px;
+}
+
+.github-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.about {
+    width: 80%;
+    margin:0 auto;
+
+    color: rgba(255,255,255,.85);
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+.description {
+    margin-top: 35px;
+}
+
+.music-player {
+
+    position: fixed;
+
+    bottom: 25px;
+    right: 25px;
+
+    width: 280px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background: rgba(28, 34, 46, 0.55);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 35px rgba(0,0,0,.4);
+
+    color: white;
+
+    text-align: center;
+
+    font-family: 'Courier New', Courier, monospace;
+
+    z-index: 999;
+}
+
+
+.music-info {
+
+    margin-bottom: 12px;
+
+}
+
+
+#song-name {
+
+    margin: 0;
+
+    font-size: 15px;
+
+    color: rgba(255,255,255,.9);
+
+}
+
+
+.music-info small {
+
+    color: rgba(255,255,255,.55);
+
+    font-size: 12px;
+
+}
+
+
+#progress {
+
+    width: 90%;
+
+    height: 5px;
+
+    cursor: pointer;
+
+}
+
+
+.controls {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.controls button {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 0;
+
+    background: rgba(255,255,255,.1);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.controls button:hover {
+
+    background: rgba(255,255,255,.25);
+
+    transform: scale(1.1);
+
+}
+</style>
+
+</html>
