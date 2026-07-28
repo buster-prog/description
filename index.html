@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=desktop.html">
-    <title>Document</title>
+    <title> Redirecting...</title>
+
+    <script>
+        if (window.innerWidth <= 768) {
+            window.location.href = "mobile.html";
+        } else {
+            window.location.href = "desktop.html";
+        }
+    </script>
 </head>
 <body>
     
