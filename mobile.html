@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card - Mobile</title>
+
+```
+<style>
+
+    body {
+
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+        padding: 20px 0;
+
+        background-image: url('background.gif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        min-height: 100vh;
+
+    }
+
+    .social-card {
+
+        width: 92vw;
+        max-width: 420px;
+
+        padding: 24px 0 30px;
+
+        background: rgba(28, 34, 46, 0.45);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 22px;
+
+        box-shadow: 0 8px 35px rgba(0,0,0,.35);
+
+        color: white;
+        text-align: center;
+
+    }
+
+    .profile-picture {
+
+        width: 120px;
+        height: 120px;
+
+        margin: 10px auto 20px;
+
+        border-radius: 50%;
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 3px solid rgba(255,255,255,.15);
+
+        box-shadow: 0 0 20px rgba(255,255,255,.08);
+
+    }
+
+    .profile-picture img {
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    .socials {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+
+    }
+
+    .socials a {
+
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-decoration: none;
+
+    }
+
+    .socials img {
+
+        width: 34px;
+        height: 34px;
+
+        object-fit: contain;
+        display: block;
+
+        transition: .2s ease;
+
+    }
+
+    .socials img:hover {
+
+        transform: scale(1.1);
+
+    }
+
+    .about {
+
+        width: 88%;
+        margin: 0 auto;
+
+        color: rgba(255,255,255,.88);
+
+        font-size: 0.95rem;
+        line-height: 1.7;
+
+        text-align: center;
+
+    }
+
+    .description {
+
+        margin-top: 28px;
+
+    }
+
+    .visitor-count {
+
+        margin-top: 12px;
+
+        color: rgba(255,255,255,.75);
+
+        font-size: 0.9rem;
+
+    }
+
+    .visitor-count img {
+
+        vertical-align: middle;
+        margin-left: 6px;
+        border-radius: 6px;
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<audio id="Aurian Dance" loop>
+    <source src="ambient1.mp4" type="audio/mp4">
+</audio>
+
+<div class="social-card">
+
+    <div class="profile-picture">
+        <img src="attachment-56.gif" alt="Profile Picture">
+    </div>
+
+    <div class="socials">
+
+        <a href="https://discord.com/users/1211619017526214720" target="_blank" title="Discord">
+            <img src="discord.png" alt="Discord">
+        </a>
+
+        <a href="https://github.com/buster-prog" target="_blank" title="GitHub">
+            <img src="github.png" alt="GitHub">
+        </a>
+
+        <a href="https://instagram.com/bustrgg1234" target="_blank" title="Instagram">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.roblox.com/users/profile?username=bustergg1234" target="_blank" title="Roblox">
+            <img src="roblox.png" alt="Roblox">
+        </a>
+
+    </div>
+
+    <p class="about description">
+
+        Hello! You may call me buster. I am a 15-year-old high-school student who is passionate about various activities. I especially enjoy partaking in discussions and debates within the SCPF fandom.
+
+        <br><br>
+
+        Other than that, I'm also interested in politics and real-world events. I particularly enjoy discussing current affairs, and I am quite passionate about my views upon the world.
+
+        <br><br>
+
+        I enjoy a wide variety of music, and also appreciate participating in a variety of video games, notably military simulations. I am also able to draw a credible amount, though with reference.
+
+    </p>
+
+    <div style="width:88%; margin:18px auto 0; line-height:1.6;">
+
+        Feel free to always reach out to me on Discord or Instagram; I'll always be glad to respond.
+
+    </div>
+
+    <div style="font-size: small; width:88%; margin:18px auto 0;">
+
+        <p>(If you haven't figured it out, I made this website myself, so it's rather wonky.)</p>
+
+        <p class="visitor-count">
+            Visitors:
+            <img src="https://visitor-badge.laobi.icu/badge?page_id=buster-prog.description"
+                 alt="visitor counter">
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+    const audio = document.getElementById('Aurian Dance');
+
+    audio.volume = 0.25;
+
+    document.addEventListener('click', function () {
+
+        audio.play();
+
+    }, { once: true });
+
+</script>
+```
+
+</body>
+</html>
