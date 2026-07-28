@@ -7,7 +7,9 @@
 </head>
 
 <body>
-
+    <audio id="Aurian Dance">
+        <source src="ambient1.mp4" type="audio/mpeg">
+    </audio>
     <div class="social-card">
 
         <div class="profile-picture">
@@ -55,91 +57,6 @@
         </div>
 
     </div>
-
-    <div class="music-player">
-
-        <div class="music-info">
-            <p id="song-name">Aurian Dance</p>
-            <small>Now Playing</small>
-        </div>
-        
-        <audio id="audio">
-            <source src="ambient1.mp4" type="audio/mp4">
-        </audio>
-
-        <input type="range" id="progress" value="0" step="1">
-
-        <<div class="controls">
-
-            <button onclick="rewind()">⏮</button>
-
-            <button onclick="playPause()">▶</button>
-
-            <button onclick="skip()">⏭</button>
-
-            <button onclick="mute()">🔇</button>
-
-</div>
-
-    </div>
-
-<script>
-
-const audio = document.getElementById("audio");
-
-
-function playPause(){
-
-    if(audio.paused){
-
-        audio.play();
-
-    } else {
-
-        audio.pause();
-
-    }
-
-}
-
-
-function mute(){
-
-    audio.muted = !audio.muted;
-
-}
-
-function skip(){
-
-    audio.currentTime += 10;
-
-}
-
-
-// ⏮ Rewind
-function rewind(){
-
-    audio.currentTime -= 10;
-
-}
-
-
-audio.addEventListener("timeupdate", () => {
-
-    progress.value = (audio.currentTime / audio.duration) * 100;
-
-});
-
-progress.addEventListener("input", () => {
-
-    audio.currentTime = (progress.value / 100) * audio.duration;
-
-});
-
-
-</script>
-
-</script>
 
 </body>
 
@@ -262,93 +179,6 @@ body {
     margin-top: 35px;
 }
 
-.music-player {
-
-    position: fixed;
-
-    bottom: 25px;
-    right: 25px;
-
-    width: 280px;
-
-    padding: 20px;
-
-    box-sizing: border-box;
-
-    background: rgba(28, 34, 46, 0.55);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border: 1px solid rgba(255,255,255,.1);
-
-    border-radius: 20px;
-
-    box-shadow: 0 8px 35px rgba(0,0,0,.4);
-
-    color: white;
-
-    text-align: center;
-
-    font-family: 'Courier New', Courier, monospace;
-
-    z-index: 999;
-}
-
-
-.music-info {
-
-    margin-bottom: 12px;
-
-}
-
-
-#song-name {
-
-    margin: 0;
-
-    font-size: 15px;
-
-    color: rgba(255,255,255,.9);
-
-}
-
-
-.music-info small {
-
-    color: rgba(255,255,255,.55);
-
-    font-size: 12px;
-
-}
-
-
-#progress {
-
-    width: 90%;
-
-    height: 5px;
-
-    cursor: pointer;
-
-}
-
-
-.controls {
-
-    margin-top: 15px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 10px;
-
-}
-
-
 .controls button {
 
     width: 38px;
@@ -387,4 +217,12 @@ body {
 }
 </style>
 
+<script>
+
+    const audio = document.getElementById('Aurian Dance');
+    audio.volume = 0.25;
+    document.addEventListener("click", function() {
+        audio.play();
+    }, { once: true});
+</script>
 </html>
